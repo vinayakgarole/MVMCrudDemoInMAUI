@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVMCrudDemo.Pages.AddPage"
+             BackgroundColor="White">
+    <Grid HorizontalOptions="Center">
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Text="Add User" FontSize="25" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" TextColor="Black" Padding="8" Margin="10, 0, 0, 0" />
+
+        <Label Text="User" FontSize="24" TextColor="Black" HorizontalOptions="CenterAndExpand" Grid.Column="0" Grid.Row="1" />
+        <Picker x:Name="namePicker" BackgroundColor="Black" HorizontalOptions="StartAndExpand" TextColor="Black" Margin="0,0,10,0"
+            ItemsSource="{Binding Names}" SelectedItem="{Binding SelectedName}" Grid.Column="1" Grid.Row="1" />
+
+        <Label Text="Description" FontSize="24" TextColor="Black" HorizontalOptions="Center" Grid.Column="0" Grid.Row="2" />
+        <Entry Placeholder="Enter Description" BackgroundColor="Black" HorizontalOptions="Center" x:Name="txtDescription" Text="{Binding Description}" TextColor="White" Grid.Column="1" Grid.Row="2" />
+
+        <Label Text="Price" FontSize="24" TextColor="Black" HorizontalOptions="Center" Grid.Column="0" Grid.Row="3" />
+        <Entry Placeholder="Enter Price" BackgroundColor="Black" HorizontalOptions="Center" x:Name="txtPrice" Text="{Binding Price}" TextColor="White" Grid.Column="1" Grid.Row="3" />
+
+        <Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="Center" BorderColor="#000" TextColor="Black" Grid.Column="0" Grid.Row="4" />
+        <Button Text="Back" Command="{Binding BackCommand}" HorizontalOptions="Center" BorderColor="#000" TextColor="Black" Grid.Column="1" Grid.Row="4" />
+    </Grid>
+
+</ContentPage>
+
+
